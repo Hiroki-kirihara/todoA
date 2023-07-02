@@ -20,7 +20,7 @@
                 <a class="nav-link" href="#">TODO <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Create <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('todolist/create') }}">Create <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Username <span class="sr-only">(current)</span></a>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             </div>
-            <div class="col mb-4">
+            {{-- <div class="col mb-4">
             <div class="card h-100">
                 <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1711&q=80" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -71,7 +71,7 @@
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
             </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 
