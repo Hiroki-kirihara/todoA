@@ -79,6 +79,14 @@
                 @enderror
             </div>
 
+            <div class="form-group">
+                <label for="image">画像:</label>
+                <input type="file" name="image" id="image">
+                @error('image')
+                    <div class="error-message">{{ $message }}</div>
+                @enderror
+            </div>
+
             <button type="submit">投稿する</button>
         </form>
     </div>
