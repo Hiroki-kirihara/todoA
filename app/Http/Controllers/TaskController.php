@@ -2,40 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
     public function showTodolistPage()
     {
+        $tasks = Task::latest()->simplePaginate(3);
         return view('todolist');
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        $validator = $request->validate([
-            'title' => ['max:30'],
-            'content' => ['max:140']
-        ]);
-
         return view('create');
     }
 
-//     public function create(Request $request)
-// {
-//     $validator = $request->validate([
-//         'title' => ['max:30'],
-//         'content' => ['max:140']
-//     ]);
+    public function store(Request $request)
+    {
+        // dd($request);
+        $task = new Task;
+        $task -> title = $request -> title;
+        $task -> contents = $request -> content;
+        $task -> image_at = $request -> image;
+        $task -> user_id = Auth::id();
 
-//     if ($validator) {
-//         return view('create');
-//     } else {
-//         // バリデーションに失敗した場合の処理
-//         return back()->withErrors($validator)->withInput();
-//     }
-// }
+        $task -> save();
+    }
 
+    // public function postTask(Request $request)
+    // {
+    //     $validator = $request->validate([
+    //         'title' => ['required', 'string', 'max:30'],
+    //         'content' => ['required', 'string', 'max:140'],
+    //     ]);
 
-  
+    //     // タスクモデルをクリエイトメソッドを使って保存するという記述
+    //     Task::create([
+    //         'user_id' => Auth::user()->id,
+
+    //     // フォームに入っているtitleを格納する記述
+    //         'title' => $request->title,
+    //         'content' => $request->content
+    //     ]);
+
+    //     // リクエストを送ったページに戻りますよという記述
+    //     return redirect()->route('todolist.create');
+    // }
 }
