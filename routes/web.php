@@ -24,3 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/todolist', [App\Http\Controllers\TaskController::class, 'showTodolistPage']);
 
 Route::get('/todolist/create', 'TaskController@create')->name('todolist.create');
+
+Route::post('/todolist', 'TaskController@store')->name('todolist.store');

@@ -62,21 +62,16 @@
     <div class="container">
         <h1>新規投稿</h1>
 
-        <form method="POST" action="/todos">
+        <form method="POST" action="{{ route('todolist.store') }}">
+            @csrf
             <div class="form-group">
-                <label for="title">タイトル:</label>
-                <input type="text" name="title" id="title" required>
-                @error('title')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
+                <label for="title">タスク:</label>
+                <input type="text" name="title" id="title">
             </div>
 
             <div class="form-group">
-                <label for="content">投稿内容:</label>
-                <textarea name="content" id="content" required></textarea>
-                @error('content')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
+                <label for="content">タスク内容:</label>
+                <textarea name="content" id="taskcontent"></textarea>
             </div>
 
             <button type="submit">投稿する</button>
