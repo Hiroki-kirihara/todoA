@@ -11,12 +11,12 @@ class TaskController extends Controller
     public function showHomePage()
     {
         $tasks = Task::latest()->simplePaginate(3);
-        return view('home');
+        return view('posts.home');
     }
 
     public function create()
     {
-        return view('create');
+        return view('posts.create');
     }
 
     public function store(Request $request)
