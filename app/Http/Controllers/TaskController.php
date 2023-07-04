@@ -10,8 +10,8 @@ class TaskController extends Controller
 {
     public function showHomePage()
     {
-        $tasks = Task::latest()->simplePaginate(3);
-        return view('posts.home');
+        $tasks = Task::all();
+        return view('posts.home', compact('tasks'));
     }
 
     public function create()
@@ -29,7 +29,10 @@ class TaskController extends Controller
         $task -> user_id = Auth::id();
 
         $task -> save();
+
+        return redirect()->route('posts.home');
     }
+
 
     public function edit()
     {
