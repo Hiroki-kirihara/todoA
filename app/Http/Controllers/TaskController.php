@@ -31,6 +31,11 @@ class TaskController extends Controller
         $task -> save();
     }
 
+    public function edit()
+    {
+        return view('edit');
+    }
+
     // public function postTask(Request $request)
     // {
     //     $validator = $request->validate([

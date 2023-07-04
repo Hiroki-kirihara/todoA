@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>新規登録</title>
+    <title>編集内容</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,9 +60,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>新規登録</h1>
+        <h1>編集内容</h1>
 
-        <form method="POST" action="/todos">
+        <form method="POST" action="{{ route('task.edit') }}">
             <div class="form-group">
                 <label for="title">タイトル:</label>
                 <input type="text" name="title" id="title" required>
@@ -87,7 +87,7 @@
                 @enderror
             </div>
 
-            <button type="submit">投稿する</button>
+            <button type="submit">更新</button>
         </form>
     </div>
 </body>
