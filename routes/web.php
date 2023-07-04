@@ -26,3 +26,5 @@ Route::get('/home', [App\Http\Controllers\TaskController::class, 'showHomePage']
 Route::get('/home/create', 'TaskController@create')->name('posts.create');
 
 Route::post('/home', 'TaskController@store')->name('posts.store');
+
+Route::get('/home/edit', 'TaskController@edit')->name('task.edit');
