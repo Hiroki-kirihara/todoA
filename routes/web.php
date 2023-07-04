@@ -21,8 +21,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/todolist', [App\Http\Controllers\TaskController::class, 'showTodolistPage']);
+Route::get('/home', [App\Http\Controllers\TaskController::class, 'showHomePage']);
 
-Route::get('/todolist/create', 'TaskController@create')->name('todolist.create');
+Route::get('/home/create', 'TaskController@create')->name('home.create');
 
-Route::post('/todolist', 'TaskController@store')->name('todolist.store');
+Route::post('/home', 'TaskController@store')->name('home.store');
+

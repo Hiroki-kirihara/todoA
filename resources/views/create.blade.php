@@ -62,7 +62,7 @@
     <div class="container">
         <h1>新規投稿</h1>
 
-        <form method="POST" action="{{ route('todolist.store') }}">
+        <form method="POST" action="{{ route('home.store') }}">
             @csrf
             <div class="form-group">
                 <label for="title">タスク:</label>
