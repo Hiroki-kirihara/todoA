@@ -19,10 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('posts.home');
 
-Route::get('/home', [App\Http\Controllers\TaskController::class, 'showHomePage']);
+Route::get('/home', [App\Http\Controllers\TaskController::class, 'showHomePage'])->name('posts.home');
 
-Route::get('/home/create', 'TaskController@create')->name('home.create');
+Route::get('/home/create', 'TaskController@create')->name('posts.create');
 
-Route::post('/home', 'TaskController@store')->name('home.store');
+Route::post('/home', 'TaskController@store')->name('posts.store');

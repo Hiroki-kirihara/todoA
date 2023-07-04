@@ -22,7 +22,7 @@
                 <a class="nav-link" href="#">TODO <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('home/create') }}">Create <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('posts.create') }}">Create <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Username <span class="sr-only">(current)</span></a>
