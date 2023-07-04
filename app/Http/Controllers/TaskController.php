@@ -6,6 +6,7 @@ use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class TaskController extends Controller
 {
     public function showHomePage()
@@ -27,6 +28,7 @@ class TaskController extends Controller
         $task -> contents = $request -> content;
         $task -> image_at = $request -> image;
         $task -> user_id = Auth::id();
+        $task = Task::paginate(8); // 1ページあたり８件のタスクを表示する例
 
         $task -> save();
 
@@ -34,10 +36,14 @@ class TaskController extends Controller
     }
 
 
-    public function edit()
+    public function edit($id)
     {
-        return view('edit');
+        $post = Task::find($id);
+        return view('posts.edit',['post'=>$post]);
     }
+
+    
+
 
     // public function postTask(Request $request)
     // {
