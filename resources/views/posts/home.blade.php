@@ -35,21 +35,21 @@
     </nav>
 
 
-
+    @foreach($tasks as $task)
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3">
             <div class="col mb-4">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1711&q=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="card h-100">
+                    <img src="{{ $task->image_at }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ $task->title }}</h5>
+                    <p class="card-text">{{ $task->contents }}</p>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
-
+    @endforeach
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
