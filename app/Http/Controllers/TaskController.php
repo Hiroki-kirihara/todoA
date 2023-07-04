@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
-    public function showTodolistPage()
+    public function showHomePage()
     {
         $tasks = Task::latest()->simplePaginate(3);
-        return view('todolist');
+        return view('home');
     }
 
     public function create()
