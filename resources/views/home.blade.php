@@ -28,8 +28,8 @@
                 <a class="nav-link" href="#">Username <span class="sr-only">(current)</span></a>
             </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </form>
         </div>
     </nav>
