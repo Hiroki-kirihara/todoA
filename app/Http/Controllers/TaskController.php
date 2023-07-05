@@ -12,6 +12,7 @@ class TaskController extends Controller
     public function showHomePage()
     {
         $tasks = Task::all();
+        $tasks = Task::latest()->simplePaginate(4);
         return view('posts.home', compact('tasks'));
     }
 
@@ -28,7 +29,6 @@ class TaskController extends Controller
         $task -> contents = $request -> content;
         $task -> image_at = $request -> image;
         $task -> user_id = Auth::id();
-        $task = Task::paginate(8); // 1ページあたり８件のタスクを表示する例
 
         $task -> save();
 
@@ -41,8 +41,6 @@ class TaskController extends Controller
         $post = Task::find($id);
         return view('posts.edit',['post'=>$post]);
     }
-
-    
 
 
     // public function postTask(Request $request)
