@@ -66,6 +66,9 @@
                             @method('delete')
                             <input type='submit' value="削除" class="btn btn-danger" onclick="return" confirm("本当に削除しますか？");>
                         </form>
+
+                            <a href="{{ route('posts.edit', $task->id) }}" class="btn btn-primary">編集</a>
+
                         </div>
                     </div>
                 </div>

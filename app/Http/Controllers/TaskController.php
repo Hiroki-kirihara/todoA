@@ -23,6 +23,12 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
+        $validator = $request->validate([
+            'title' => ['required', 'string', 'max:30'],
+            'content' => ['required', 'string', 'max:140'],
+            'image' => ['required'],
+        ]);
+
         // dd($request);
         $task = new Task;
         $task -> title = $request -> title;
@@ -38,8 +44,8 @@ class TaskController extends Controller
 
     public function edit($id)
     {
-        $post = Task::find($id);
-        return view('posts.edit',['post'=>$post]);
+        $task = Task::find($id);
+        return view('posts.edit',['post'=>$task]);
     }
     
     public function destroy($id)
