@@ -77,13 +77,19 @@
             <div class="form-group">
                 <label for="image">画像:</label>
                 <input type="file" name="image" id="image">
-                @error('image')
-                    <div class="error-message">{{ $message }}</div>
-                @enderror
             </div>
 
             <button type="submit">投稿する</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 </body>
 </html>
