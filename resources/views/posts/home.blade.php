@@ -34,7 +34,7 @@
         </div>
     </nav>
 
-{{-- 
+{{--
     @foreach($tasks as $task)
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3">
@@ -51,22 +51,22 @@
     </div>
     @endforeach --}}
     @foreach($tasks->chunk(4) as $taskChunk)
-<div class="container">
-    <div class="row row-cols-1 row-cols-md-4">
-        @foreach($taskChunk as $task)
-        <div class="col mb-4">
-            <div class="card h-100">
-                <img src="{{ $task->image_at }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $task->title }}</h5>
-                    <p class="card-text">{{ $task->contents }}</p>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-4">
+                @foreach($taskChunk as $task)
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="{{ $task->image_at }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $task->title }}</h5>
+                            <p class="card-text">{{ $task->contents }}</p>
+                        </div>
+                    </div>
                 </div>
+                @endforeach
             </div>
         </div>
-        @endforeach
-    </div>
-</div>
-@endforeach
+    @endforeach
 
 
 {{-- {{ $task->links() }}
