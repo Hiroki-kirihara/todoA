@@ -62,7 +62,7 @@
     <div class="container">
         <h1>編集内容</h1>
 
-        <form method="POST" action="{{ route('posts.edit') }}">
+        <form method="POST" action="{{ route('posts.edit',$post->id) }}">
             <div class="form-group">
                 <label for="title">タイトル:</label>
                 <input type="text" name="title" id="title" required>
