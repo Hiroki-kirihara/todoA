@@ -47,7 +47,13 @@ class TaskController extends Controller
         $task = Task::find($id);
         return view('posts.edit',['post'=>$task]);
     }
-
+    
+    public function destroy($id)
+    {
+        $post = Task::find($id);
+        $post->delete();
+        return redirect()->route('home');
+    }
 
     // public function postTask(Request $request)
     // {
