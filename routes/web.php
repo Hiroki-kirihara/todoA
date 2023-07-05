@@ -28,3 +28,5 @@ Route::get('/home/create', 'TaskController@create')->name('posts.create');
 Route::post('/home', 'TaskController@store')->name('posts.store');
 
 Route::get('/home/{id}/edit', 'TaskController@edit')->name('posts.edit');
+
+Route::delete('/home/{id}','TaskController@destroy')->name('posts.destroy');
