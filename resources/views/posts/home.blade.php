@@ -60,6 +60,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $task->title }}</h5>
                             <p class="card-text">{{ $task->contents }}</p>
+                            <a href="{{ route('posts.edit', $task->id) }}" class="btn btn-primary">編集</a>
                         </div>
                     </div>
                 </div>

@@ -38,8 +38,8 @@ class TaskController extends Controller
 
     public function edit($id)
     {
-        $post = Task::find($id);
-        return view('posts.edit',['post'=>$post]);
+        $task = Task::find($id);
+        return view('posts.edit',['post'=>$task]);
     }
 
 
