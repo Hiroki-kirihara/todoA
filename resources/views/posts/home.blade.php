@@ -57,7 +57,7 @@
                 @foreach($taskChunk as $task)
                 <div class="col mb-4">
                     <div class="card h-100">
-                        <img src="{{ asset('storage/img') }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('storage/') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ $task->title }}</h5>
                             <p class="card-text">{{ $task->contents }}</p>
