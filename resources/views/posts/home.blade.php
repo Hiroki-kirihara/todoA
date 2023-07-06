@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Username <span class="sr-only">(current)</span></a>
-            </li> 
+            </li>
             </ul>
                 <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -60,16 +60,13 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $task->title }}</h5>
                             <p class="card-text">{{ $task->contents }}</p>
-                            
-                            <form action="{{ route('posts.destroy',$task->id) }}" method="post">
+                        </div>
+                        <form action="{{ route('posts.destroy',$task->id) }}">
                             @csrf
                             @method('delete')
                             <input type='submit' value="削除" class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
                         </form>
-
-                            <a href="{{ route('posts.edit', $task->id) }}" class="btn btn-primary">編集</a>
-
-                        </div>
+                        <a href="{{ route('posts.edit', $task->id) }}" class="btn btn-primary">編集</a>
                     </div>
                 </div>
                 @endforeach
