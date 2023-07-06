@@ -40,13 +40,12 @@ class TaskController extends Controller
         return redirect()->route('posts.home');
     }
 
-
     public function edit($id)
     {
         $task = Task::find($id);
         return view('posts.edit',['task'=>$task]);
     }
-    
+
     public function update(Request $request, $id)
     {
         $task = Task::find($id);
@@ -59,35 +58,12 @@ class TaskController extends Controller
         return redirect()->route('posts.home',compact('task'));
     }
 
-
-
-
-
     public function destroy($id)
     {
         $task = Task::find($id);
         $task->delete();
-  
+
         return redirect()->route('posts.home');
     }
 
-    // public function postTask(Request $request)
-    // {
-    //     $validator = $request->validate([
-    //         'title' => ['required', 'string', 'max:30'],
-    //         'content' => ['required', 'string', 'max:140'],
-    //     ]);
-
-    //     // タスクモデルをクリエイトメソッドを使って保存するという記述
-    //     Task::create([
-    //         'user_id' => Auth::user()->id,
-
-    //     // フォームに入っているtitleを格納する記述
-    //         'title' => $request->title,
-    //         'content' => $request->content
-    //     ]);
-
-    //     // リクエストを送ったページに戻りますよという記述
-    //     return redirect()->route('todolist.create');
-    // }
 }
