@@ -62,10 +62,12 @@
     <div class="container">
         <h1>編集内容</h1>
 
-        <form method="POST" action="{{ route('posts.edit',$post->id) }}">
+        <form method="POST" action="{{ route('posts.update', $task->id) }}"method="POST">
+          @csrf
+          @method('put')
             <div class="form-group">
                 <label for="title">タイトル:</label>
-                <input type="text" name="title" id="title" required>
+                <input type="text" class="form-control" value="{{ $task->title }}" name="title" id="title" required>
                 @error('title')
                     <div class="error-message">{{ $message }}</div>
                 @enderror
@@ -73,7 +75,7 @@
 
             <div class="form-group">
                 <label for="content">投稿内容:</label>
-                <textarea name="content" id="content" required></textarea>
+                <textarea name="content" id="content" required>{{ $task->contents }}</textarea>
                 @error('content')
                     <div class="error-message">{{ $message }}</div>
                 @enderror
@@ -81,7 +83,7 @@
 
             <div class="form-group">
                 <label for="image">画像:</label>
-                <input type="file" name="image" id="image">
+                <input type="file" class="form-control" value="{{ $task->image }}" name="image" id="image">
                 @error('image')
                     <div class="error-message">{{ $message }}</div>
                 @enderror

@@ -44,13 +44,30 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
-        return view('posts.edit',['post'=>$task]);
+        return view('posts.edit',['task'=>$task]);
     }
-
-   public function destroy($id)
+    
+    public function update(Request $request, $id)
     {
         $task = Task::find($id);
-        $task -> delete();
+        $task -> title = $request -> title;
+        $task -> contents = $request -> content;
+        $task -> image_at = $request -> image;
+
+        $task -> save();
+
+        return redirect()->route('posts.home',compact('task'));
+    }
+
+
+
+
+
+    public function destroy($id)
+    {
+        $task = Task::find($id);
+        $task->delete();
+  
         return redirect()->route('posts.home');
     }
 
