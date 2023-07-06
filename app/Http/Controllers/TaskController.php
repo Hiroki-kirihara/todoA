@@ -11,7 +11,6 @@ class TaskController extends Controller
 {
     public function showHomePage()
     {
-        // $tasks = Task::all();
         $tasks = Task::latest()->simplePaginate(4);
         return view('posts.home', ['tasks'=>$tasks]);
     }
@@ -68,6 +67,7 @@ class TaskController extends Controller
     {
         $task = Task::find($id);
         $task->delete();
+  
         return redirect()->route('posts.home');
     }
 
