@@ -47,7 +47,7 @@ class TaskController extends Controller
         return view('posts.edit',['post'=>$task]);
     }
 
-    function destroy($id)
+   public function destroy($id)
     {
         $task = Task::find($id);
         $task -> delete();
