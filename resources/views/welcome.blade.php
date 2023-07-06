@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Lara--</title>
+        {{-- <title>Lara--</title> --}}
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,47 @@
                 </div>
             @endif
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            @extends('layouts.app')
+
+@section('content')
+<div class="signinPage">
+  <div class="container">
+    <h2 class="title">Todolistにログイン</h2>
+    {{-- <div class="text-center m-3">or</div>
+    <div class="text-center">
+      <p class="acountPage_link"><a href="{{ route('register') }}">アカウントを作成</a></p>
+    </div>
+    <form class="new_user" id="new_user" action="{{ route('login') }}" accept-charset="UTF-8" method="post">
+    {{ csrf_field() }}
+      <div class="form-group"> --}}
+        {{-- <label for="user_email">メールアドレス</label><br>
+        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
+      </div>
+
+      <div class="form-group">
+        <label for="user_password">パスワード</label><br>
+        <input id="password" type="password" class="form-control" name="password" required>
+        @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
+      </div>
+
+      <div class="form-group text-center">
+        <input type="submit" name="commit" value="ログインする" class="loginBtn" data-disable-with="ログインする">
+      </div>
+    </form>
+  </div>
+</div>
+@endsection
+ --}}
+            {{-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
                         <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -96,8 +136,8 @@
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
                                 </div>
-                            </div>
-                        </div>
+                            </div> --}}
+                        {{-- </div>
                     </div>
                 </div>
 
@@ -126,7 +166,7 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </body>
 </html>

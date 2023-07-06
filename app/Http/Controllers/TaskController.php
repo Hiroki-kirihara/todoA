@@ -50,9 +50,9 @@ class TaskController extends Controller
     
     public function destroy($id)
     {
-        $post = Task::find($id);
-        $post->delete();
-        return redirect()->route('home');
+        $task = Task::find($id);
+        $task->delete();
+        return redirect()->route('posts.home');
     }
 
     // public function postTask(Request $request)
