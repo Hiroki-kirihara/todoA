@@ -32,7 +32,7 @@ class TaskController extends Controller
         $task = new Task;
         $task -> title = $request -> title;
         $task -> contents = $request -> content;
-        $task -> image_at = $request -> file('image')->store('public/');
+        $task -> image_at = $request -> file('image')->store('public/images/');
         $task -> user_id = Auth::id();
 
         $task -> save();

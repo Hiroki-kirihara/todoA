@@ -34,22 +34,6 @@
         </div>
     </nav>
 
-{{--
-    @foreach($tasks as $task)
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="{{ $task->image_at }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">{{ $task->title }}</h5>
-                    <p class="card-text">{{ $task->contents }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach --}}
     @if(isset($tasks))
     @foreach($tasks->chunk(4) as $taskChunk)
         <div class="container">
@@ -57,7 +41,7 @@
                 @foreach($taskChunk as $task)
                 <div class="col mb-4">
                     <div class="card h-100">
-                        <img src="{{ asset('storage/') }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('storage/' . str_replace('public/', '', $task->image_at)) }}" class="card-img-top" alt="..." width="300" height="200">
                         <div class="card-body">
                             <h5 class="card-title">{{ $task->title }}</h5>
                             <p class="card-text">{{ $task->contents }}</p>
@@ -76,9 +60,6 @@
     @endforeach
     {{ $tasks->links() }}
     @endif
-
-{{-- {{ $task->links() }}
- --}}
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
