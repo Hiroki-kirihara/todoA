@@ -11,9 +11,8 @@ class TaskController extends Controller
 {
     public function showHomePage()
     {
-        $tasks = Task::all();
         $tasks = Task::latest()->simplePaginate(4);
-        return view('posts.home', compact('tasks'));
+        return view('posts.home', ['tasks'=>$tasks]);
     }
 
     public function create()
@@ -47,11 +46,11 @@ class TaskController extends Controller
         $task = Task::find($id);
         return view('posts.edit',['post'=>$task]);
     }
-    
-    public function destroy($id)
+
+    function destroy($id)
     {
-        $post = Task::find($id);
-        $post->delete();
+        $task = Task::find($id);
+        $task -> delete();
         return redirect()->route('posts.home');
     }
 

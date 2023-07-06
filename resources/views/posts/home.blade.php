@@ -61,7 +61,7 @@
                             <h5 class="card-title">{{ $task->title }}</h5>
                             <p class="card-text">{{ $task->contents }}</p>
                         </div>
-                        <form action="{{ route('posts.destroy',$task->id) }}">
+                        <form action="{{ route('posts.destroy',$task->id) }}"method="post">
                             @csrf
                             @method('delete')
                             <input type='submit' value="削除" class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
