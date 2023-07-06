@@ -52,7 +52,7 @@ class TaskController extends Controller
     {
         $post = Task::find($id);
         $post->delete();
-        return redirect()->route('home');
+        return redirect()->route('posts.home');
     }
 
     // public function postTask(Request $request)
