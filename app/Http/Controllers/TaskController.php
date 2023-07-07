@@ -48,6 +48,14 @@ class TaskController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        $validator = $request->validate([
+            'title' => ['required', 'string', 'max:30'],
+            'content' => ['required', 'string', 'max:140'],
+            'image' => ['required'],
+        ]);
+
+
         $task = Task::find($id);
         $task -> title = $request -> title;
         $task -> contents = $request -> content;
