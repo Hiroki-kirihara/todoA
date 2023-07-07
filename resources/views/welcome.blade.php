@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,4 +129,55 @@
             </div>
         </div>
     </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <!-- ... -->
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .button {
+            background-color: rgb(12, 11, 11);
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+        }
+
+        .text-sm {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="center">
+        <h1>TODOリスト</h1> <!-- Placed the h1 tag here -->
+        <div>
+            @if (Route::has('login'))
+                <div class="mb-4">
+                    @auth
+                    <button class=button><a href="{{ route('posts.home') }}" class="text-sm text-gray-700 dark:text-gray-500 ">Home</a></button>
+                    @else
+                        <button class=button><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 ">Log in</a></button>
+
+                        @if (Route::has('register'))
+                            <button class=button><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></button>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div>
+    </div>
+</body>
 </html>
